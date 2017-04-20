@@ -28,6 +28,14 @@
 
 
 
+
+- (void)priority{
+    dispatch_queue_attr_t  attr = dispatch_queue_attr_make_with_qos_class(NULL, QOS_CLASS_USER_INTERACTIVE, 0);
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.fenglin", attr);
+    
+    
+}
 /**
  第一种情况:使用dispatch_set_target_queue(Dispatch Queue1, Dispatch Queue2)实现队列的动态调度管理
   dispatch队列不支持cancel（取消），没有实现dispatch_cancel()函数，不像NSOperationQueue，不得不说这是个小小的缺憾

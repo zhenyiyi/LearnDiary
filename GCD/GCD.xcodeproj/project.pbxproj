@@ -13,6 +13,8 @@
 		519072391EA7327D00C0A325 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519072371EA7327D00C0A325 /* Main.storyboard */; };
 		5190723B1EA7327D00C0A325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190723A1EA7327D00C0A325 /* Assets.xcassets */; };
 		5190723E1EA7327E00C0A325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5190723C1EA7327E00C0A325 /* LaunchScreen.storyboard */; };
+		5190726A1EA8ABD900C0A325 /* YYDispatchQueuePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 519072691EA8ABD900C0A325 /* YYDispatchQueuePool.m */; };
+		5190726D1EA8B31500C0A325 /* FLDispatchQueuePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5190726C1EA8B31500C0A325 /* FLDispatchQueuePool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		5190723A1EA7327D00C0A325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5190723D1EA7327E00C0A325 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5190723F1EA7328000C0A325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		519072681EA8ABD900C0A325 /* YYDispatchQueuePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYDispatchQueuePool.h; sourceTree = "<group>"; };
+		519072691EA8ABD900C0A325 /* YYDispatchQueuePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDispatchQueuePool.m; sourceTree = "<group>"; };
+		5190726B1EA8B31500C0A325 /* FLDispatchQueuePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLDispatchQueuePool.h; sourceTree = "<group>"; };
+		5190726C1EA8B31500C0A325 /* FLDispatchQueuePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLDispatchQueuePool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 		5190722D1EA7327B00C0A325 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
+				519072681EA8ABD900C0A325 /* YYDispatchQueuePool.h */,
+				519072691EA8ABD900C0A325 /* YYDispatchQueuePool.m */,
+				5190726B1EA8B31500C0A325 /* FLDispatchQueuePool.h */,
+				5190726C1EA8B31500C0A325 /* FLDispatchQueuePool.m */,
 				519072311EA7327C00C0A325 /* AppDelegate.h */,
 				519072321EA7327C00C0A325 /* AppDelegate.m */,
 				519072341EA7327C00C0A325 /* ViewController.h */,
@@ -152,8 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				519072361EA7327C00C0A325 /* ViewController.m in Sources */,
+				5190726A1EA8ABD900C0A325 /* YYDispatchQueuePool.m in Sources */,
 				519072331EA7327C00C0A325 /* AppDelegate.m in Sources */,
 				519072301EA7327B00C0A325 /* main.m in Sources */,
+				5190726D1EA8B31500C0A325 /* FLDispatchQueuePool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +287,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2EX3DT547J;
 				INFOPLIST_FILE = GCD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quanshi.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,6 +300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2EX3DT547J;
 				INFOPLIST_FILE = GCD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.quanshi.-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +326,7 @@
 				519072441EA7328000C0A325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
