@@ -15,6 +15,7 @@
 		5190723E1EA7327E00C0A325 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5190723C1EA7327E00C0A325 /* LaunchScreen.storyboard */; };
 		5190726A1EA8ABD900C0A325 /* YYDispatchQueuePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 519072691EA8ABD900C0A325 /* YYDispatchQueuePool.m */; };
 		5190726D1EA8B31500C0A325 /* FLDispatchQueuePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5190726C1EA8B31500C0A325 /* FLDispatchQueuePool.m */; };
+		519072701EA9D65400C0A325 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5190726F1EA9D65400C0A325 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		519072691EA8ABD900C0A325 /* YYDispatchQueuePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYDispatchQueuePool.m; sourceTree = "<group>"; };
 		5190726B1EA8B31500C0A325 /* FLDispatchQueuePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLDispatchQueuePool.h; sourceTree = "<group>"; };
 		5190726C1EA8B31500C0A325 /* FLDispatchQueuePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLDispatchQueuePool.m; sourceTree = "<group>"; };
+		5190726E1EA9D65400C0A325 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5190726F1EA9D65400C0A325 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				519072691EA8ABD900C0A325 /* YYDispatchQueuePool.m */,
 				5190726B1EA8B31500C0A325 /* FLDispatchQueuePool.h */,
 				5190726C1EA8B31500C0A325 /* FLDispatchQueuePool.m */,
+				5190726E1EA9D65400C0A325 /* Person.h */,
+				5190726F1EA9D65400C0A325 /* Person.m */,
 				519072311EA7327C00C0A325 /* AppDelegate.h */,
 				519072321EA7327C00C0A325 /* AppDelegate.m */,
 				519072341EA7327C00C0A325 /* ViewController.h */,
@@ -161,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				519072701EA9D65400C0A325 /* Person.m in Sources */,
 				519072361EA7327C00C0A325 /* ViewController.m in Sources */,
 				5190726A1EA8ABD900C0A325 /* YYDispatchQueuePool.m in Sources */,
 				519072331EA7327C00C0A325 /* AppDelegate.m in Sources */,

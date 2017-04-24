@@ -1,0 +1,3 @@
+target 'SDWebImageTest' do
+   pod 'SDWebImage'
+end

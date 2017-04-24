@@ -1,0 +1,3 @@
+target 'MyFrameworkSDK’ do
+  pod 'SDWebImage'
+end

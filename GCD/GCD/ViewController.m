@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "Person.h"
 
-@interface ViewController ()
+
+@interface ViewController (){
+    void *strogeQueueTag;
+    dispatch_queue_t strogeQueue;
+   
+    Person *p1;
+}
 
 @end
 
@@ -16,6 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    strogeQueueTag = &strogeQueueTag;
+    strogeQueue = dispatch_queue_create("com.fenglin.serial", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_set_specific(strogeQueue, strogeQueueTag, strogeQueueTag, NULL);
+    
+    p1 = [Person new];
     
 //    [self syncMethod];
     
@@ -25,6 +38,7 @@
     
 //    [self targetQueue2];
     
+<<<<<<< HEAD
     [self dispatchBarrier];
 }
 
@@ -38,6 +52,133 @@
     dispatch_barrier_async(concurrentQueue, ^{
         NSLog(@"111111");
     });
+=======
+//    [self barrier];
+    
+//    [self asyncBlock];
+    
+//    [self executeBlock];
+    
+    [self dellocOnSomeQueue];
+}
+
+
+/**
+  在某个队列中释放对象。
+ */
+- (void)dellocOnSomeQueue{
+    Person *p = p1;
+    p1 = nil;
+    dispatch_async(strogeQueue, ^{
+        [p hash];
+        NSLog(@"%s currentThread-> %@",__func__,[NSThread currentThread]);
+    });
+}
+
+- (void) testSync{
+    
+    NSLog(@"BBBBBB");
+    dispatch_sync(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"currentThread-> %@ <-",[NSThread currentThread]);
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@"out");
+    });
+    
+    /*
+     void dispatch_sync(dispatch_queue_t queue, dispatch_block_t block);
+     
+     Submits a block object for execution on a dispatch queue and waits until that block completes.
+     
+     Submits a block to a dispatch queue for synchronous execution.
+     Unlike dispatch_async, this function does not return until the block has finished.
+     Calling this function and targeting the current queue results in deadlock.
+     
+     Unlike with dispatch_async, no retain is performed on the target queue.
+     Because calls to this function are synchronous, it "borrows" the reference of the caller. "borrows->借用"
+     Moreover, no Block_copy is performed on the block.
+     As an optimization, this function invokes the block on the current thread when possible.
+     
+     */
+    
+    /*
+     dispatch_async(<#dispatch_queue_t  _Nonnull queue#>, <#^(void)block#>)
+     Submits a block for asynchronous execution on a dispatch queue and returns immediately.
+     
+     This function is the fundamental mechanism for submitting blocks to a dispatch queue. Calls to this function always return immediately after the block has been submitted and never wait for the block to be invoked.
+     The target queue determines whether the block is invoked serially or concurrently with respect to other blocks submitted to that same queue.
+     Independent serial queues are processed concurrently with respect to each other.
+     */
+    
+}
+
+- (void)executeBlock{
+    for (NSUInteger i=0; i<1000; i++) {
+        [self executeBlock:^{
+            NSLog(@"%lu currentThread-> %@",(unsigned long)i ,[NSThread currentThread]);
+        }];
+    }
+    
+    [self executeBlock:^{
+        NSLog(@"%d currentThread-> %@",11 ,[NSThread currentThread]);
+    }];
+//    2017-04-21 09:13:46.774 
+//    2017-04-21 09:13:47.716
+}
+
+
+- (void)asyncBlock{
+    for (NSUInteger i=0; i<1000; i++) {
+        [self scheduleBlock:^{
+            NSLog(@"%lu currentThread-> %@",(unsigned long)i ,[NSThread currentThread]);
+        }];
+    }
+    
+    [self scheduleBlock:^{
+        NSLog(@"%d currentThread-> %@",11 ,[NSThread currentThread]);
+    }];
+}
+
+- (void)executeBlock:(dispatch_block_t)block{
+    if ( dispatch_get_specific(strogeQueueTag)) {
+        if (block) block();
+    }else{
+        dispatch_sync(strogeQueue, ^{
+            if (block) block();
+        });
+    }
+}
+- (void)scheduleBlock:(dispatch_block_t)block{
+    if ( dispatch_get_specific(strogeQueueTag)) {
+        if (block) block();
+    }else{
+        dispatch_async(strogeQueue, ^{
+           if (block) block();
+        });
+    }
+    
+//    2017-04-21 09:10:47.141
+//    2017-04-21 09:10:48.298
+    
+}
+
+- (void)barrier{
+    dispatch_queue_t queue = dispatch_queue_create("com.fenglin.concurrent", DISPATCH_QUEUE_CONCURRENT);
+    for (NSUInteger i=0; i<1000; i++) {
+        dispatch_barrier_async(queue, ^{
+            NSLog(@"%lu currentThread-> %@",(unsigned long)i ,[NSThread currentThread]);
+        });
+    }
+    dispatch_barrier_async(queue, ^{
+        NSLog(@"00000000000 %@ ",[NSThread currentThread]);
+    });
+    
+    dispatch_barrier_async(queue, ^{
+        NSLog(@"111111111  %@ ",[NSThread currentThread]);
+    });
+    
+//    2017-04-21 09:11:42.979
+//    2017-04-21 09:11:44.127
+>>>>>>> 8eb865027be862dd21f1f04542ae0d1b202ab85a
 }
 
 
@@ -162,6 +303,8 @@
         
     });
 }
+
+
 
 
 
