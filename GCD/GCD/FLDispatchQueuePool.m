@@ -92,6 +92,8 @@ static dispatch_queue_t dispatch_get_queue(FLDispatchContext *context){
 }
 
 - (dispatch_queue_t)queue{
-    return dispatch_get_queue(_dispatchContext);
+    dispatch_queue_t queue =  dispatch_get_queue(_dispatchContext);
+    NSLog(@"queue->>> %@",queue);
+    return queue;
 }
 @end

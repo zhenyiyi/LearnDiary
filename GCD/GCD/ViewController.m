@@ -24,8 +24,21 @@
 //    [self targetQueue1];
     
 //    [self targetQueue2];
+    
+    [self dispatchBarrier];
 }
 
+-(void)dispatchBarrier{
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.fenglin.concurrent", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_barrier_async(concurrentQueue, ^{
+        NSLog(@"222222");
+        [NSThread sleepForTimeInterval:3];
+    });
+    
+    dispatch_barrier_async(concurrentQueue, ^{
+        NSLog(@"111111");
+    });
+}
 
 
 

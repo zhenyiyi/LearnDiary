@@ -22,18 +22,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-    FLDispatchQueuePool *pool = [[FLDispatchQueuePool alloc] initWithName:@"dispatch.fenglin" queueCount:5 qos:NSQualityOfServiceUserInteractive];
-    
-    
-    
-    for (NSUInteger i=0; i<100; i++) {
-        dispatch_queue_t queue = [pool queue];
-        dispatch_async(queue, ^{
-            NSLog(@"i-> %lu currentThread-> %@",(unsigned long)i,[NSThread currentThread]);
-            sleep(1);
-            NSLog(@"-------------------------");
-        });
-    }
+//    YYDispatchQueuePool *pool = [[YYDispatchQueuePool alloc] initWithName:@"dispatch.fenglin" queueCount:5 qos:NSQualityOfServiceUserInteractive];
+//    
+//    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.fenglin.concurrent", DISPATCH_QUEUE_CONCURRENT);
+//    
+//    for (NSUInteger i=0; i<10000; i++) {
+//        dispatch_queue_t queue = [pool queue];
+//        dispatch_async(queue, ^{
+//            NSLog(@"i-> %lu currentThread-> %@",(unsigned long)i,[NSThread currentThread]);
+//            sleep(10);
+//            NSLog(@"-------------------------");
+//        });
+//    }
     
     return YES;
 }
