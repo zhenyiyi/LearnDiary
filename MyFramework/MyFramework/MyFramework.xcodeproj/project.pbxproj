@@ -13,6 +13,7 @@
 		510D56AC1EADEEF400216DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510D56AA1EADEEF400216DD4 /* Main.storyboard */; };
 		510D56AE1EADEEF400216DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 510D56AD1EADEEF400216DD4 /* Assets.xcassets */; };
 		510D56B11EADEEF400216DD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510D56AF1EADEEF400216DD4 /* LaunchScreen.storyboard */; };
+		510D56E11EADF23E00216DD4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 510D56E01EADF23E00216DD4 /* Person.m */; };
 		6EAE28788AA7899796CBBD11 /* libPods-MyFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAD3E7DB84AB9CF44AB38E5 /* libPods-MyFramework.a */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,8 @@
 		510D56AD1EADEEF400216DD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		510D56B01EADEEF400216DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		510D56B21EADEEF400216DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		510D56DF1EADF23E00216DD4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		510D56E01EADF23E00216DD4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		57E5704C36C16C1404306AEE /* Pods-MyFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFramework.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyFramework/Pods-MyFramework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +68,7 @@
 		510D56A01EADEEF400216DD4 /* MyFramework */ = {
 			isa = PBXGroup;
 			children = (
+				510D56DE1EADF23E00216DD4 /* Classes */,
 				510D56A41EADEEF400216DD4 /* AppDelegate.h */,
 				510D56A51EADEEF400216DD4 /* AppDelegate.m */,
 				510D56A71EADEEF400216DD4 /* ViewController.h */,
@@ -84,6 +88,15 @@
 				510D56A21EADEEF400216DD4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		510D56DE1EADF23E00216DD4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				510D56DF1EADF23E00216DD4 /* Person.h */,
+				510D56E01EADF23E00216DD4 /* Person.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		98FD60F965FAE99A12EE2B23 /* Frameworks */ = {
@@ -137,7 +150,8 @@
 				TargetAttributes = {
 					510D569D1EADEEF400216DD4 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 7JNFK889B2;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -227,6 +241,7 @@
 			files = (
 				510D56A91EADEEF400216DD4 /* ViewController.m in Sources */,
 				510D56A61EADEEF400216DD4 /* AppDelegate.m in Sources */,
+				510D56E11EADF23E00216DD4 /* Person.m in Sources */,
 				510D56A31EADEEF400216DD4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,10 +363,14 @@
 			baseConfigurationReference = 3220681F3E8B48F72496F376 /* Pods-MyFramework.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 7JNFK889B2;
 				INFOPLIST_FILE = MyFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quanshi.MyFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c33ca8aa-b111-4e92-97bd-c9af74e59c8c";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
 			};
 			name = Debug;
 		};
@@ -360,10 +379,14 @@
 			baseConfigurationReference = 57E5704C36C16C1404306AEE /* Pods-MyFramework.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 7JNFK889B2;
 				INFOPLIST_FILE = MyFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quanshi.MyFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c33ca8aa-b111-4e92-97bd-c9af74e59c8c";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
 			};
 			name = Release;
 		};
@@ -386,6 +409,7 @@
 				510D56B71EADEEF400216DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
