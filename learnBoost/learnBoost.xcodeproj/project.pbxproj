@@ -242,7 +242,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYSTEM_HEADER_SEARCH_PATHS = "$SOURCE_ROOT/../ $SOURCE_ROOT/ $SOURCE_ROOT/../../";
+				SYSTEM_HEADER_SEARCH_PATHS = "$SOURCE_ROOT/ $SOURCE_ROOT/../ $SOURCE_ROOT/../../";
 			};
 			name = Debug;
 		};
@@ -251,7 +251,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYSTEM_HEADER_SEARCH_PATHS = "$SOURCE_ROOT/../ $SOURCE_ROOT/ $SOURCE_ROOT/../../";
+				SYSTEM_HEADER_SEARCH_PATHS = "$SOURCE_ROOT/ $SOURCE_ROOT/../ $SOURCE_ROOT/../../";
 			};
 			name = Release;
 		};
