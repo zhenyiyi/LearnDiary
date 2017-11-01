@@ -12,11 +12,15 @@
 static void app_event(bool isActice){
     printf("isActice == %d\n",isActice);
 }
+static void app_foreground(bool foreground){
+    printf("foreground == %d\n",foreground);
+}
 
 static boost::signals2::signal<void (bool isActice)> sig;
 
 static int boot_run(){
     sig.connect(&app_event);
+    sig.connect(&app_foreground);
     return 0;
 }
 
