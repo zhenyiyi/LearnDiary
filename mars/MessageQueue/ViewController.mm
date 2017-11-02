@@ -97,6 +97,9 @@ private:
     [self performSelector:@selector(testMessageQueue)];
     
     [self performSelector:@selector(testMessageQueue) withObject:nil afterDelay:2];
+    
+    
+    int ret = pthread_kill(pthread_self(), 0);
 }
 
 - (void)testMessageQueue{

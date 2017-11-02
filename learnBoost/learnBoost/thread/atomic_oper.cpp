@@ -9,8 +9,9 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <sys/syscall.h>
-#include <pthread.h>
 #include <unistd.h>
+#include <pthread.h>
+
 
 
 inline uint32_t atomic_add32(volatile uint32_t*mem, uint32_t val){
@@ -87,14 +88,18 @@ void* thread2(void *b){
 
 int main(){
     pthread_t t1,t2;
-    
+
     pthread_create(&t1, NULL, thread1, &t1);
     pthread_create(&t2, NULL, thread2, &t1);
-    
+
     pthread_join(t1, NULL);
     pthread_join(t2, NULL);
     
     
+    uint32_t a = 0;
+    if (!atomic_cas32(&a, 0, 1)) {
+        printf("a == %d\n",a);
+    }
    
     
     

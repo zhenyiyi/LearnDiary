@@ -10,6 +10,9 @@
 		510E2CAC1FAAB0BD00BBB17A /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 510E2CAB1FAAB0BD00BBB17A /* thread.c */; };
 		510E2CB81FAAC0B400BBB17A /* tss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 510E2CB71FAAC0B400BBB17A /* tss.cpp */; };
 		510E2CBB1FAADE7900BBB17A /* atomic_oper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 510E2CBA1FAADE7900BBB17A /* atomic_oper.cpp */; };
+		510E2CBD1FAAED1700BBB17A /* reinterpret_cast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 510E2CBC1FAAED1700BBB17A /* reinterpret_cast.cpp */; };
+		510E2CBF1FAAF2B500BBB17A /* condition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 510E2CBE1FAAF2B500BBB17A /* condition.cpp */; };
+		510E2CC11FAAF87900BBB17A /* metux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 510E2CC01FAAF87900BBB17A /* metux.cpp */; };
 		51CD0A1A1FA88022006FA0D9 /* signal2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51CD0A191FA88022006FA0D9 /* signal2.cpp */; };
 		51F04F791FA759C4002DEF72 /* bind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51F04F771FA759C4002DEF72 /* bind.cpp */; };
 		51F04F7A1FA759C4002DEF72 /* function.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51F04F781FA759C4002DEF72 /* function.cpp */; };
@@ -32,6 +35,9 @@
 		510E2CAB1FAAB0BD00BBB17A /* thread.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = thread.c; sourceTree = "<group>"; };
 		510E2CB71FAAC0B400BBB17A /* tss.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tss.cpp; sourceTree = "<group>"; };
 		510E2CBA1FAADE7900BBB17A /* atomic_oper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = atomic_oper.cpp; sourceTree = "<group>"; };
+		510E2CBC1FAAED1700BBB17A /* reinterpret_cast.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = reinterpret_cast.cpp; sourceTree = "<group>"; };
+		510E2CBE1FAAF2B500BBB17A /* condition.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = condition.cpp; sourceTree = "<group>"; };
+		510E2CC01FAAF87900BBB17A /* metux.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = metux.cpp; sourceTree = "<group>"; };
 		51CD0A191FA88022006FA0D9 /* signal2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = signal2.cpp; sourceTree = "<group>"; };
 		51F04F671FA747B2002DEF72 /* learnBoost */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = learnBoost; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F04F771FA759C4002DEF72 /* bind.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bind.cpp; sourceTree = "<group>"; };
@@ -55,6 +61,9 @@
 			children = (
 				510E2CB71FAAC0B400BBB17A /* tss.cpp */,
 				510E2CBA1FAADE7900BBB17A /* atomic_oper.cpp */,
+				510E2CBC1FAAED1700BBB17A /* reinterpret_cast.cpp */,
+				510E2CBE1FAAF2B500BBB17A /* condition.cpp */,
+				510E2CC01FAAF87900BBB17A /* metux.cpp */,
 			);
 			path = thread;
 			sourceTree = "<group>";
@@ -148,8 +157,11 @@
 				510E2CB81FAAC0B400BBB17A /* tss.cpp in Sources */,
 				51CD0A1A1FA88022006FA0D9 /* signal2.cpp in Sources */,
 				51F04F7C1FA76054002DEF72 /* any.cpp in Sources */,
+				510E2CBD1FAAED1700BBB17A /* reinterpret_cast.cpp in Sources */,
 				510E2CAC1FAAB0BD00BBB17A /* thread.c in Sources */,
+				510E2CBF1FAAF2B500BBB17A /* condition.cpp in Sources */,
 				51F04F791FA759C4002DEF72 /* bind.cpp in Sources */,
+				510E2CC11FAAF87900BBB17A /* metux.cpp in Sources */,
 				51F04F7A1FA759C4002DEF72 /* function.cpp in Sources */,
 				510E2CBB1FAADE7900BBB17A /* atomic_oper.cpp in Sources */,
 			);
