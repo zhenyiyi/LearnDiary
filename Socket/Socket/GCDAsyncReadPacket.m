@@ -261,9 +261,9 @@
 /**
  * For read packets with a set terminator,
  * returns the amount of data that can be read from the given preBuffer,
- * without going over a terminator or the maxLength.
+ * without going over a terminator or the maxLength. 没有经过终止符或最大长度
  *
- * It is assumed the terminator has not already been read.
+ * It is assumed the terminator has not already been read. 假设还没有读取终止符
  **/
 - (NSUInteger)readLengthForTermWithPreBuffer:(GCDAsyncSocketPreBuffer *)preBuffer found:(BOOL *)foundPtr
 {
